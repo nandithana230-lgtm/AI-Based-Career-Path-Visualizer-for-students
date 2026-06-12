@@ -2,17 +2,30 @@
 <html>
 <head>
     <title>AI Career Path Visualizer</title>
-    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>AI Career Path Visualizer for Students</h1>
-        <p>Enter your interest:</p>
-        <input type="text" id="interest" placeholder="e.g. Programming">
-        <button onclick="showCareer()">Get Career Path</button>
-        <h2 id="result"></h2>
-    </div>
+    <h1>AI Career Path Visualizer</h1>
 
-    <script src="script.js"></script>
+    <input type="text" id="interest" placeholder="Enter your interest">
+    <button onclick="showCareer()">Get Career Path</button>
+
+    <h2 id="result"></h2>
+
+    <script>
+        function showCareer() {
+            var interest = document.getElementById("interest").value;
+            var result = document.getElementById("result");
+
+            if (interest === "") {
+                result.innerHTML = "Please enter an interest.";
+            } else if (interest.toLowerCase() === "programming") {
+                result.innerHTML = "Suggested Career: Software Engineer";
+            } else if (interest.toLowerCase() === "electronics") {
+                result.innerHTML = "Suggested Career: Electronics Engineer";
+            } else {
+                result.innerHTML = "Suggested Career: " + interest + " related field.";
+            }
+        }
+    </script>
 </body>
 </html>
