@@ -4,28 +4,33 @@
     <title>AI Career Path Visualizer</title>
 </head>
 <body>
-    <h1>AI Career Path Visualizer</h1>
 
-    <input type="text" id="interest" placeholder="Enter your interest">
-    <button onclick="showCareer()">Get Career Path</button>
+<h1>AI Career Path Visualizer for Students</h1>
 
-    <h2 id="result"></h2>
+<label>Enter your interest:</label>
+<input type="text" id="interest">
+<button onclick="showCareer()">Get Career Path</button>
 
-    <script>
-        function showCareer() {
-            var interest = document.getElementById("interest").value;
-            var result = document.getElementById("result");
+<p id="result"></p>
 
-            if (interest === "") {
-                result.innerHTML = "Please enter an interest.";
-            } else if (interest.toLowerCase() === "programming") {
-                result.innerHTML = "Suggested Career: Software Engineer";
-            } else if (interest.toLowerCase() === "electronics") {
-                result.innerHTML = "Suggested Career: Electronics Engineer";
-            } else {
-                result.innerHTML = "Suggested Career: " + interest + " related field.";
-            }
-        }
-    </script>
+<script>
+function showCareer() {
+    let interest = document.getElementById("interest").value;
+
+    if (interest.toLowerCase() == "programming") {
+        document.getElementById("result").innerHTML =
+        "Suggested Career: Software Engineer";
+    }
+    else if (interest.toLowerCase() == "electronics") {
+        document.getElementById("result").innerHTML =
+        "Suggested Career: Electronics Engineer";
+    }
+    else {
+        document.getElementById("result").innerHTML =
+        "Suggested Career: " + interest;
+    }
+}
+</script>
+
 </body>
 </html>
